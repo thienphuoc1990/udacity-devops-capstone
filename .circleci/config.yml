@@ -54,6 +54,7 @@ jobs:
       - restore_cache:
           keys: [app-build]
       - run:
+          name: Check lint app
           command: |
             cd app
             npm install
