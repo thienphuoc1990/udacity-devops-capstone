@@ -70,13 +70,13 @@ jobs:
       - run:
           name: Build docker image
           command: |
-            scripts/build_image.sh latest 
-            scripts/build_image.sh ${CIRCLE_SHA1:0:7}
+            scripts/build-image.sh latest 
+            scripts/build-image.sh ${CIRCLE_SHA1:0:7}
       - run:
           name: Push docker image
           command: |
-            scripts/push_image.sh latest 
-            scripts/push_image.sh ${CIRCLE_SHA1:0:7}
+            scripts/push-image.sh latest 
+            scripts/push-image.sh ${CIRCLE_SHA1:0:7}
 
 workflows:
   default:
