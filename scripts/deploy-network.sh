@@ -1,7 +1,7 @@
 
 #!/bin/bash
 ACTION=$1
-STACK_NAME=uda-devops-capstone-stack
+STACK_NAME=uda-devops-capstone-network-stack
 
 if [ $ACTION = "update" ]
 then
