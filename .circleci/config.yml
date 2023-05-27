@@ -148,6 +148,9 @@ jobs:
           name: smoke test
           command: |
             kubectl port-forward service/uda-app-service 8080:80  > uda-app-forward-port.log 2>&1 &
+            cat uda-app-forward-port.log
+            curl 127.0.0.1:8080
+            cat scripts/smoke-test.sh
             scripts/smoke-test.sh
             cat uda-app-forward-port.log
       - run:
