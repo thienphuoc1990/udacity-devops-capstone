@@ -7,6 +7,10 @@ Use CircleCI for CICD Pipeline
 Here is a CICD Pipeline propose diagram
 <img src="docs/images/cicd_pipeline.png" />
 
+## Project quick view
+You can see my [project quick view here](./docs/PROJECT_QUICKVIEW.md)
+
+
 ## Prerequisites
 You must install docker and k8s in local
 ## How to run
@@ -40,9 +44,6 @@ For AWS CICD pipeline with CircleCI we will need setup infrastructure first:
 
 1. Forwarding port to localhost:8080
     > kubectl port-forward service/uda-app-service 8080:80
-
-## Project preview
-You can see my project quick view [here](./docs/PROJECT_QUICKVIEW.md)
 
 ## App source reference
 I get initial source for app from https://github.com/Yvad60/blog-code-references/tree/setup-jest-and-react-testing-library
