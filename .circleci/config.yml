@@ -21,8 +21,8 @@ commands:
           command: |
             sudo apt update
             sudo apt install awscli -y
-            aws configure set aws_access_key_id AKIATQVA6UAA6K6BUJ76
-            aws configure set aws_secret_access_key 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
+            aws configure set aws_access_key_id $AWS_ACCESS_KEY
+            aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
             aws configure set region eu-east-1
             aws --version
 
@@ -147,12 +147,7 @@ jobs:
       - run:
           name: smoke test
           command: |
-            kubectl port-forward service/uda-app-service 8080:80  > uda-app-forward-port.log 2>&1 &
-            cat uda-app-forward-port.log
-            curl 127.0.0.1:8080
-            cat scripts/smoke-test.sh
             scripts/smoke-test.sh
-            cat uda-app-forward-port.log
       - run:
           name: revert
           command: |
