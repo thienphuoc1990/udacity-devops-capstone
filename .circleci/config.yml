@@ -137,11 +137,13 @@ jobs:
             aws eks update-kubeconfig --region us-east-1 --name uda-devops-capstone-cluster
             kubectl config get-contexts
             kubectl get all
+            kubectl describe deployment uda-app-deployment
       - run:
           name: deploy app
           command: | 
             kubectl set image deployment/uda-app-deployment uda-app=thienphuoc1990/udacity-devops-capstone-app:0.2
             kubectl rollout status deployment uda-app-deployment
+            kubectl describe deployment uda-app-deployment
       - run:
           name: smoke test
           command: |
@@ -152,6 +154,7 @@ jobs:
           name: revert
           command: |
             kubectl rollout undo deployment uda-app-deployment
+            kubectl describe deployment uda-app-deployment
           when: on_fail
 
 workflows:
