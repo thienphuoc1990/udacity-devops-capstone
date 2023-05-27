@@ -5,7 +5,7 @@ import App from '../App.jsx';
 describe('App tests', () => {
 	it('should contains the heading 1', () => {
 		render(<App />);
-		const heading = screen.getByText(/Hello world! I am using Jest and React/i);
+		const heading = screen.getByText(/Hello world! I am Phuoc Dinh Thien/i);
 		expect(heading).toBeInTheDocument();
 	});
 });
