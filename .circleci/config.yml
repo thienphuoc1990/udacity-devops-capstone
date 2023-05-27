@@ -141,7 +141,7 @@ jobs:
       - run:
           name: deploy app
           command: | 
-            kubectl set image deployment/uda-app-deployment uda-app=thienphuoc1990/udacity-devops-capstone-app:0.2
+            kubectl set image deployment/uda-app-deployment uda-app=thienphuoc1990/udacity-devops-capstone-app:${CIRCLE_SHA1:0:7}
             kubectl rollout status deployment uda-app-deployment
             kubectl describe deployment uda-app-deployment
             kubectl get all
