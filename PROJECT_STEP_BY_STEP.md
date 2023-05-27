@@ -1,1 +1,0 @@
-# Udacity - Cloud DevOps Engineer - Capstone - Project step by step with images
