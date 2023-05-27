@@ -144,6 +144,7 @@ jobs:
             kubectl set image deployment/uda-app-deployment uda-app=thienphuoc1990/udacity-devops-capstone-app:0.2
             kubectl rollout status deployment uda-app-deployment
             kubectl describe deployment uda-app-deployment
+            kubectl get all
       - run:
           name: smoke test
           command: |
@@ -153,6 +154,7 @@ jobs:
           command: |
             kubectl rollout undo deployment uda-app-deployment
             kubectl describe deployment uda-app-deployment
+            kubectl get all
           when: on_fail
 
 workflows:
